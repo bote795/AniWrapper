@@ -1,7 +1,7 @@
 require('graphql-request');
-const Anilist = require("./../Anilist");
+const Anilist = require("./../dist/Anilist");
 const dotenv = require("dotenv");
-const result = dotenv.config()
+dotenv.config()
 function main() {
     const token = process.env.TOKEN;    
     const aniClient = new Anilist(token);

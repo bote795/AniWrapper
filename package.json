@@ -2,10 +2,11 @@
   "name": "aniwrapper",
   "version": "1.0.0",
   "description": "api wrapper for anilist",
-  "module": "lib/index.js",
+  "module": "dist/Anilist.js",
   "scripts": {
     "dev": "webpack --watch",
-    "deploy": "webpack -p"
+    "build:node": "cp dist/Anilist.js example/ && node example/index.js",
+    "deploy": "webpack -p && npm run build:node"
   },
   "repository": {
     "type": "git",
