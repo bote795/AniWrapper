@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import Anilist  from '../dist/Anilist.js';
+import Anilist  from '../lib/Anilist.js';
 const dotenv = require("dotenv");
 dotenv.config();
 const debug = false;
