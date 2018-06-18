@@ -7,7 +7,8 @@
     "dev": "webpack --watch",
     "build:node": "cp dist/Anilist.js example/ && node example/index.js",
     "deploy": "webpack -p && npm run build:node && npm run test:only",
-    "test:only": "mocha --require babel-core/register "
+    "test:only": "mocha --require babel-core/register ",
+    "test": "webpack -p && npm run test:only"
   },
   "babel": {
     "presets": [
