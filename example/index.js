@@ -1,5 +1,5 @@
 require('graphql-request');
-const Anilist = require("./../dist/Anilist");
+const Anilist = require("./Anilist");
 const dotenv = require("dotenv");
 dotenv.config()
 function main() {
