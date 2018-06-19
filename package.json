@@ -36,11 +36,11 @@
   },
   "homepage": "https://github.com/bote795/AniWrapper#readme",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "graphql-request": "^1.6.0",
     "jwt-decode": "^2.2.0"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
