@@ -1,0 +1,6 @@
+#!/bin/bash
+if npm run deploy ; then
+    echo "Sucessfully deployed"
+else
+    echo "Failed to deploy check the logs"
+fi
