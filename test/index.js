@@ -62,4 +62,22 @@ describe('Anilist test.', () => {
           done();
         });
     });
+
+    it("should add anime 1535 death note and delete entry", done => {
+        const addEntry = { mediaId: 1535, status: "CURRENT", progress: 1 };
+        aniClient
+          .addAnime(addEntry)
+          .then(val => { 
+              log(val);
+              return val.SaveMediaListEntry.id
+            })
+          .then(id => aniClient.removeAnime(id))
+          .then(result => { 
+              log(result)
+              done();
+            })
+          .catch(err => log("There was an error %O", err));
+
+          
+    });
 });
