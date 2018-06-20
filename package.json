@@ -11,6 +11,7 @@
     "test:only": "mocha --require babel-core/register ",
     "test": "npm run test:only",
     "lint": "eslint lib test",
+    "docs": "./node_modules/.bin/jsdoc lib/Anilist.js -d docs",
     "cover:only": "istanbul cover _mocha -- --require babel-core/register",
     "cover": "istanbul cover _mocha --report lcovonly -- --require babel-core/register -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
@@ -56,6 +57,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
     "istanbul": "^1.0.0-alpha",
+    "jsdoc": "^3.5.5",
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
     "webpack": "^4.8.1",
