@@ -5,7 +5,7 @@ import Anilist from '../lib/Anilist';
 const dotenv = require('dotenv');
 
 dotenv.config();
-const debug = true;
+const debug = false;
 function log(...theArgs) {
   if (debug) {
     console.log(theArgs); // eslint-disable-line
