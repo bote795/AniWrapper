@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "api wrapper for anilist",
   "module": "dist/Anilist.js",
+  "main": "dist/Anilist.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "postinstall": "cp ./githooks/pre-push .git/hooks/ && chmod +x .git/hooks/pre-push",
+    "prepublish": "npm run build",
+    "build": "rm -rf dist && webpack -p",
+    "_postinstall": "cp ./githooks/pre-push .git/hooks/ && chmod +x .git/hooks/pre-push",
     "dev": "webpack --watch",
     "build:node": "cp dist/Anilist.js example/ && node example/index.js",
     "deploy": "webpack -p && npm run build:node && npm run cover:only && npm run documentationjs",
@@ -33,7 +39,7 @@
     "graphql",
     "v2"
   ],
-  "author": "",
+  "author": "Nicolas Botello",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bote795/AniWrapper/issues"
