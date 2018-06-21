@@ -30,4 +30,5 @@ jobs:
       # run tests!
       - run: npm run cover
 
+      - run: npm run deploy
 
