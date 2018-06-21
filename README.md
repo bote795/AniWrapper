@@ -7,8 +7,19 @@ Api Wrapper for AniList
 
 * Need to inclue require('graphql-request') seperatly as it is not bundled
 * since it currently has a problem will look into chaninging later
+
  ```sh
+npm install graphql-request
 npm install aniwrapper
 ```
 
+Basic Usage
+```js
+require('graphql-request');
+const Anilist = require('aniwrapper');
+const aniClient = new Anilist(token);
+aniClient
+  .getUserList()
+  .then((result) => console.log(result));
+```
 ## [Documentation](http://nicolasbotello.com/AniWrapper/)
