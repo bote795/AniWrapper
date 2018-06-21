@@ -2,6 +2,7 @@
 [![dependencies Status](https://david-dm.org/bote795/AniWrapper/status.svg)](https://david-dm.org/bote795/AniWrapper)
 [![devDependencies Status](https://david-dm.org/bote795/AniWrapper/dev-status.svg)](https://david-dm.org/bote795/AniWrapper?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/bote795/AniWrapper/badge.svg?branch=master)](https://coveralls.io/github/bote795/AniWrapper?branch=master)
+[![npm version](https://badge.fury.io/js/aniwrapper.svg)](https://badge.fury.io/js/aniwrapper)
 # AniWrapper
 Api Wrapper for AniList
 
