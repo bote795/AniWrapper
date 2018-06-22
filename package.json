@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "prepublish": "npm run build",
+    "prepack": "npm run build",
     "build": "rm -rf dist && webpack -p",
     "_postinstall": "cp ./githooks/pre-push .git/hooks/ && chmod +x .git/hooks/pre-push",
     "dev": "webpack --watch",
