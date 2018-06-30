@@ -36,3 +36,18 @@ aniClient
   .then((result) => console.log(result));
 ```
 ## [Documentation](http://nicolasbotello.com/AniWrapper/)
+
+
+## Contribute
+```bash
+yarn install
+
+yarn _postinstall
+```
+add a `.env` file to your root with the following inside:
+```bash
+TOKEN=<YourToken>
+QA_TOKEN=<YourToken>
+```
+To contribute create your own branch and put a PR
+
