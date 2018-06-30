@@ -28,14 +28,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn deploy
-      - run: |
-            set -eo pipefail
-            if yarn examples ; then
-              echo "Sucessfully ran examples"
-            else
-                echo "Failed to on examples"
-                exit 1
-            fi
   test:
     docker:
       # specify the version you desire here
