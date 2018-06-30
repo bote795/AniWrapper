@@ -17,8 +17,8 @@ function main() {
       console.log('This is what the result of update is: %O', result);
     })
     .catch((err) => {
-      console.log('There was an error %O', err)
-      throw err;
+      console.log('There was an error %O', err);
+      process.exit(1);
     });
 }
 try {
