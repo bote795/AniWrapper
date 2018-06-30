@@ -30,7 +30,7 @@ jobs:
       - run: yarn deploy
       - run: |
             set -eo pipefail
-            if yarn yarn examples ; then
+            if yarn examples ; then
               echo "Sucessfully ran examples"
             else
                 echo "Failed to on examples"
