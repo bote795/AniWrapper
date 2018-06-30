@@ -16,7 +16,10 @@ function main() {
     .then((result) => {
       console.log('This is what the result of update is: %O', result);
     })
-    .catch(err => console.log('There was an error %O', err));
+    .catch((err) => {
+      console.log('There was an error %O', err)
+      throw err;
+    });
 }
 try {
   main();
