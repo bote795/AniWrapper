@@ -18,4 +18,8 @@ function main() {
     })
     .catch(err => console.log('There was an error %O', err));
 }
-main();
+try {
+  main();
+} catch (error) {
+  process.exit(1);
+}
