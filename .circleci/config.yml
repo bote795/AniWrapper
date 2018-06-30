@@ -32,5 +32,11 @@ jobs:
 
       - run: yarn deploy
 
-      - run: yarn examples
+      - run: |
+          if yarn yarn examples ; then
+            echo "Sucessfully ran examples"
+          else
+              echo "Failed to on examples"
+              exit 1
+          fi
 
