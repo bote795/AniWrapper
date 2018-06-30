@@ -13,7 +13,7 @@ jobs:
     steps:
       - checkout
 
-      - run: yarn build:node
+      - run: yarn examples
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -33,5 +33,5 @@ jobs:
 
       - run: yarn deploy
 
-     - run: yarn build:node
+     - run: yarn examples
 
