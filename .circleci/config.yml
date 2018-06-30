@@ -13,6 +13,7 @@ jobs:
     steps:
       - checkout
 
+      - run: yarn build:node
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -31,4 +32,6 @@ jobs:
       - run: yarn cover
 
       - run: yarn deploy
+
+     - run: yarn build:node
 
