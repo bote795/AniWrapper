@@ -13,7 +13,6 @@ jobs:
     steps:
       - checkout
 
-      - run: yarn examples
       # Download and cache dependencies
       - restore_cache:
           keys:
