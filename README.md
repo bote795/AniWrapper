@@ -7,23 +7,29 @@
 Api Wrapper for AniList   
 [Anilist API Documentation](https://anilist.gitbooks.io/anilist-apiv2-docs/)
 
-* Need to inclue require('graphql-request') seperatly as it is not bundled
-* since it currently has a problem will look into chaninging later
-
+## Install
  ```sh
-npm install graphql-request
-npm install aniwrapper
+yarn add aniwrapper
+npm install --save aniwrapper
 ```
+
+
 ### Get Token
 To retrieve a token you can go to the following and paste your token     
 [GetToken](https://anilist.co/api/v2/oauth/authorize?client_id=673&response_type=token)    
 You can also retrieve a token setting up your own anilist app   
 <b>make sure not to expose your token to a github repo or post it online</b>
 
-Basic Usage
+## Basic Usage
 ```js
-require('graphql-request');
-const Anilist = require('aniwrapper');
+import Anilist from 'Anilist'             // ES Modules and Babel
+const Anilist = require('anilist')        // CommonJS and Browserify
+const Anilist = require('anilist/node')   // node-only package
+```
+## Quick Start
+```js
+//node
+const Anilist = require('anilist/node');
 const aniClient = new Anilist(token);
 aniClient
   .getUserList()

@@ -1,11 +1,17 @@
 #!/bin/bash
-if npm run lint; then
+if yarn lint; then
     echo "Sucessfully passed linter"
 else
     echo "Failed linter"
 fi
 
-if npm run deploy ; then
+if yarn deploy ; then
+    echo "Sucessfully deployed"
+else
+    echo "Failed to deploy check the logs"
+fi
+
+if yarn documentationjs ; then
     echo "Sucessfully deployed"
 else
     echo "Failed to deploy check the logs"

@@ -1,5 +1,4 @@
-require('graphql-request');
-const Anilist = require('./Anilist');
+const Anilist = require('../dist/anilist/node');
 const dotenv = require('dotenv'); // eslint-disable-line
 
 dotenv.config();
