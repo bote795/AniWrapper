@@ -31,12 +31,3 @@ jobs:
       - run: yarn cover
 
       - run: yarn deploy
-
-      - run: |
-          if yarn examples ; then
-            echo "Sucessfully ran examples"
-          else
-              echo "Failed to on examples"
-              exit 1
-          fi
-
