@@ -15,6 +15,7 @@
     "dev": "webpack --watch",
     "examples": "node example/index.js",
     "deploy": "webpack -p && npm run examples && npm run cover:only",
+    "debugDeploy": "webpack && npm run examples && npm run cover:only",
     "test:only": "mocha --require babel-core/register ",
     "test": "npm run test:only",
     "lint": "eslint lib test",
