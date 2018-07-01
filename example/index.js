@@ -1,5 +1,4 @@
-require('graphql-request');
-const Anilist = require('./Anilist');
+const Anilist = require('../dist/anilist/node');
 const dotenv = require('dotenv'); // eslint-disable-line
 
 dotenv.config();
@@ -17,6 +16,13 @@ function main() {
     .then((result) => {
       console.log('This is what the result of update is: %O', result);
     })
-    .catch(err => console.log('There was an error %O', err));
+    .catch((err) => {
+      console.log('There was an error %O', err);
+      process.exit(1);
+    });
 }
-main();
+try {
+  main();
+} catch (error) {
+  process.exit(1);
+}
