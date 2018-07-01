@@ -36,8 +36,7 @@ describe('Anilist test.', () => {
         log('This is the element: %O', media);
         return media.mediaId;
       })
-      .then(id =>
-        aniClient.updateAnime({ mediaId: id, progress: updateEp }))
+      .then(id => aniClient.updateAnime({ mediaId: id, progress: updateEp }))
       .then((result) => {
         log('This is what the result of update is: %O', result);
         assert.equal(result.SaveMediaListEntry.progress, updateEp);
