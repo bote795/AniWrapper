@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "engines": {
     "node": ">=7.1.0",
-    "yarn": "^1.7.0"
+    "yarn": "^1.6.0"
   },
   "files": [
     "dist"
