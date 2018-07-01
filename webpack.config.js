@@ -29,7 +29,7 @@ const nodeSpecificFields = {
   target: 'node',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'anilist/node.js'
+    filename: 'aniwrapper/node.js'
   }
 };
 const nodeVersion = R.mergeDeepRight(web, nodeSpecificFields);

@@ -22,14 +22,14 @@ You can also retrieve a token setting up your own anilist app
 
 ## Basic Usage
 ```js
-import Anilist from 'Anilist'             // ES Modules and Babel
-const Anilist = require('anilist')        // CommonJS and Browserify
-const Anilist = require('anilist/node')   // node-only package
+import Anilist from 'aniwrapper'             // ES Modules and Babel
+const Anilist = require('aniwrapper')        // CommonJS and Browserify
+const Anilist = require('aniwrapper/node')   // node-only package
 ```
 ## Quick Start
 ```js
 //node
-const Anilist = require('anilist/node');
+const Anilist = require('aniwrapper/node');
 const aniClient = new Anilist(token);
 aniClient
   .getUserList()
