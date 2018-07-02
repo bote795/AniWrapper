@@ -2,7 +2,7 @@
 if yarn lint; then
     echo "Sucessfully passed linter"
 else
-    echo "Failed linter"
+    echo "Failed linter. Please try with `yarn format`"
     exit 1
 fi
 
