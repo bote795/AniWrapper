@@ -54,7 +54,7 @@ describe('Anilist test.', () => {
     const vars = {
       id: 1,
       listType: 'ANIME',
-      status: 'CURRENT',
+      status: 'CURRENT'
     };
     aniClient.getUserListForUser(vars).then(result => {
       log(result);

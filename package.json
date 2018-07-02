@@ -24,7 +24,7 @@
     "test:only": "mocha --require babel-core/register ",
     "test": "npm run test:only",
     "lint": "eslint lib test",
-    "format": "prettier --config ./.prettierrc --write ./{lib,test}/**/*.js",
+    "format": "npm run lint -- --fix && prettier --write ./{lib,test}/**/*.js",
     "documentationjs": "./node_modules/documentation/bin/documentation.js build lib/Anilist.js -f html -o docs --shallow",
     "cover:only": "istanbul cover _mocha -- --require babel-core/register",
     "cover": "istanbul cover _mocha --report lcovonly -- --require babel-core/register -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
@@ -75,6 +75,7 @@
     "eslint-config-airbnb-base": "13.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-prettier": "^2.6.1",
     "istanbul": "1.1.0-alpha.1",
     "mocha": "5.2.0",
     "mocha-lcov-reporter": "1.3.0",
