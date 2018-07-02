@@ -1,13 +1,13 @@
 {
-    "extends": "airbnb-base",
-    "env": {
-        "mocha": true,
-        "es6": true
-    },
-    "rules": {
-        "comma-dangle": [
-            "error",
-            "only-multiline"
-        ]
-    }
+  "extends": ["airbnb-base", "prettier"],
+  "env": {
+    "mocha": true,
+    "es6": true
+  },
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+    ]
+  }
 }
