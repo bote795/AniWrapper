@@ -4,7 +4,7 @@ const R = require('ramda');
 const web = {
   entry: ['babel-polyfill', './lib/Anilist.js'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname),
     filename: 'index.js',
     library: 'Anilist',
     libraryTarget: 'umd',
@@ -28,8 +28,8 @@ const nodeSpecificFields = {
   entry: ['babel-polyfill', './lib/Anilist.js'],
   target: 'node',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'aniwrapper/node.js'
+    path: path.resolve(__dirname, 'node'),
+    filename: 'index.js'
   }
 };
 const nodeVersion = R.mergeDeepRight(web, nodeSpecificFields);

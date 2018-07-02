@@ -1,4 +1,4 @@
-const Anilist = require('../dist/aniwrapper/node');
+const Anilist = require('../node');
 const dotenv = require('dotenv'); // eslint-disable-line
 
 dotenv.config();
