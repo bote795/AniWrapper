@@ -1,13 +1,15 @@
 {
-    "extends": "airbnb-base",
-    "env": {
-        "mocha": true,
-        "es6": true
-    },
-    "rules": {
-        "comma-dangle": [
-            "error",
-            "only-multiline"
-        ]
-    }
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["prettier"],
+  "env": {
+    "mocha": true,
+    "es6": true
+  },
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+    ],
+    "prettier/prettier": "error"
+  }
 }
