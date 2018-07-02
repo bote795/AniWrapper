@@ -2,19 +2,20 @@
   "name": "aniwrapper",
   "version": "1.0.0",
   "description": "api wrapper for anilist",
-  "module": "dist/index.js",
-  "main": "dist/index.js",
+  "module": "index",
+  "main": "index",
   "engines": {
     "node": ">=7.1.0",
     "yarn": "^1.6.0"
   },
   "files": [
-    "dist"
+    "node",
+    "index.js"
   ],
   "scripts": {
     "prepack": "npm run build",
-    "buildDev": "rm -rf dist && webpack && npm run examples",
-    "build": "rm -rf dist && webpack -p && npm run examples",
+    "buildDev": "rm -rf node && rm index.js && webpack && npm run examples",
+    "build": "rm -rf node && rm index.js && webpack -p && npm run examples",
     "_postinstall": "cp ./githooks/pre-push .git/hooks/ && chmod +x .git/hooks/pre-push",
     "dev": "webpack --watch",
     "examples": "node example/index.js",
