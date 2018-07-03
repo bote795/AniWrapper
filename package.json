@@ -21,10 +21,10 @@
     "examples": "node example/index.js",
     "deploy": "webpack -p && npm run examples && npm run cover:only",
     "debugDeploy": "webpack && npm run examples && npm run cover:only",
-    "test:only": "mocha --require babel-core/register ",
+    "test:only": "mocha --require babel-core/register",
     "test": "npm run test:only",
     "lint": "eslint lib test",
-    "format": "npm run lint -- --fix && prettier --write ./{lib,test}/**/*.js",
+    "format": "npm run lint -- --fix && prettier --write ./{lib,test}/**/*.{js,gql}",
     "documentationjs": "./node_modules/documentation/bin/documentation.js build lib/Anilist.js -f html -o docs --shallow",
     "cover:only": "istanbul cover _mocha -- --require babel-core/register",
     "cover": "istanbul cover _mocha --report lcovonly -- --require babel-core/register -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
@@ -34,7 +34,11 @@
       "env"
     ],
     "plugins": [
-      "transform-class-properties"
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      ["babel-plugin-inline-import", {
+        "extensions": [".json", ".gql"]
+      }]
     ]
   },
   "repository": {
@@ -63,7 +67,9 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-loader": "7.1.4",
+    "babel-plugin-inline-import": "3.0.0",
     "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",

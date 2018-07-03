@@ -1,0 +1,20 @@
+mutation(
+  $id: Int
+  $mediaId: Int
+  $status: MediaListStatus
+  $score: Float
+  $progress: Int
+) {
+  SaveMediaListEntry(
+    id: $id
+    mediaId: $mediaId
+    score: $score
+    progress: $progress
+    status: $status
+  ) {
+    id
+    mediaId
+    status
+    progress
+  }
+}
