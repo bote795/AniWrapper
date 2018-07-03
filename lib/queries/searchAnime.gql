@@ -1,0 +1,16 @@
+query($query: String) {
+  AnimeSearch: Page {
+    media(search: $query, type: ANIME) {
+      id
+      episodes
+      title {
+        userPreferred
+        romaji
+        english
+      }
+      coverImage {
+        medium
+      }
+    }
+  }
+}
