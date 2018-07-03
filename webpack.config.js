@@ -23,7 +23,6 @@ const web = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
 };
 
-
 const nodeSpecificFields = {
   entry: ['babel-polyfill', './lib/Anilist.js'],
   target: 'node',
