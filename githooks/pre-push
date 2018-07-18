@@ -12,10 +12,3 @@ else
     echo "Failed to deploy check the logs"
     exit 1
 fi
-
-if yarn documentationjs ; then
-    echo "Sucessfully deployed"
-else
-    echo "Failed to deploy check the logs"
-    exit 1
-fi
