@@ -1,5 +1,5 @@
 function addSuite(Anilist, qaToken) {
-  const debug = true;
+  const debug = false;
 
   function log(...theArgs) {
     if (debug) {
