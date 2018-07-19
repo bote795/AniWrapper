@@ -13,9 +13,10 @@ else
     exit 1
 fi
 
-if yarn documentationjs ; then
-    echo "Sucessfully deployed"
+
+if yarn cypress:run ; then
+    echo "Sucessfully ran browser tests"
 else
-    echo "Failed to deploy check the logs"
+    echo "Failed browser tests check the logs"
     exit 1
 fi

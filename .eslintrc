@@ -5,6 +5,10 @@
     "mocha": true,
     "es6": true
   },
+  "globals": {
+    "assert": true,
+    "Cypress": true
+},
   "rules": {
     "comma-dangle": [
       "error",
