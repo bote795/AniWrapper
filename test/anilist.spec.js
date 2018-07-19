@@ -21,6 +21,7 @@ function addSuite(Anilist, qaToken) {
         })
         .catch(err => {
           console.log(err); // eslint-disable-line
+          done();
         });
     });
     it('should getUserList: get all current logged in users list and update tokyo ghoul to ep 2 ', done => {
