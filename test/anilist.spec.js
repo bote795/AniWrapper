@@ -20,6 +20,7 @@ function addSuite(Anilist, qaToken) {
           done();
         })
         .catch(err => {
+          assert.equal(err, {});
           cy.log('This is the error', err); // eslint-disable-line
           done();
         });
