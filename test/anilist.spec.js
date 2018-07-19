@@ -13,17 +13,10 @@ function addSuite(Anilist, qaToken) {
       assert.isDefined(aniClient);
     });
     it('should getUserList: get all current logged in users list ', done => {
-      aniClient
-        .getUserList()
-        .then(result => {
-          assert.equal(result.MediaListCollection.lists.length, 1);
-          done();
-        })
-        .catch(err => {
-          assert.equal(err, {});
-          cy.log('This is the error', err); // eslint-disable-line
-          done();
-        });
+      aniClient.getUserList().then(result => {
+        assert.equal(result.MediaListCollection.lists.length, 1);
+        done();
+      });
     });
     it('should getUserList: get all current logged in users list and update tokyo ghoul to ep 2 ', done => {
       const updateEp = 2;
