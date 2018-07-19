@@ -13,10 +13,15 @@ function addSuite(Anilist, qaToken) {
       assert.isDefined(aniClient);
     });
     it('should getUserList: get all current logged in users list ', done => {
-      aniClient.getUserList().then(result => {
-        assert.equal(result.MediaListCollection.lists.length, 1);
-        done();
-      });
+      aniClient
+        .getUserList()
+        .then(result => {
+          assert.equal(result.MediaListCollection.lists.length, 1);
+          done();
+        })
+        .catch(err => {
+          console.log(err); // eslint-disable-line
+        });
     });
     it('should getUserList: get all current logged in users list and update tokyo ghoul to ep 2 ', done => {
       const updateEp = 2;
