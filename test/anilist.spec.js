@@ -20,7 +20,7 @@ function addSuite(Anilist, qaToken) {
           done();
         })
         .catch(err => {
-          console.log(err); // eslint-disable-line
+          Cypress.log('This is the error', err); // eslint-disable-line
           done();
         });
     });
