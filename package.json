@@ -65,7 +65,7 @@
   },
   "homepage": "https://github.com/bote795/AniWrapper#readme",
   "dependencies": {
-    "graphql-request": "1.6.0",
+    "graphql-request": "1.8.2",
     "jwt-decode": "2.2.0"
   },
   "resolutions": {
