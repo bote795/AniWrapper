@@ -96,6 +96,6 @@
     "prettier": "1.15.3",
     "ramda": "0.26.1",
     "webpack": "4.19.1",
-    "webpack-cli": "3.1.0"
+    "webpack-cli": "3.1.2"
   }
 }
