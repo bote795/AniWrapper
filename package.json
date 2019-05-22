@@ -72,6 +72,7 @@
     "cross-fetch": "2.2.2"
   },
   "devDependencies": {
+    "extend": ">=3.0.2",
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
     "babel-plugin-inline-import": "3.0.0",
