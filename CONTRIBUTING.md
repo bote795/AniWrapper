@@ -17,3 +17,12 @@ QA_TOKEN=<YourToken>
   "QA_TOKEN" :"<YourToken>"
 }
 ```
+
+
+## Deploy new version
+
+1. `npm run cover:only`
+2. `npm run build`
+3. `npm run deploy`
+4. `npm version <update_type>` release types (patch, major, or minor):
+4. `npm publish`
