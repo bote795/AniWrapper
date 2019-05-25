@@ -1,103 +1,104 @@
 {
-  "name": "aniwrapper",
-  "version": "1.0.1",
-  "description": "api wrapper for anilist",
-  "module": "index",
-  "main": "index",
-  "engines": {
-      "node": ">=7.1.0",
-      "yarn": "^1.6.0"
-  },
-  "files": [
-      "node",
-      "index.js"
-  ],
-  "scripts": {
-      "prepack": "npm run build",
-      "buildDev": "rm -rf node && rm index.js && webpack && npm run examples",
-      "build": "rm -rf node && rm index.js && webpack -p && npm run examples",
-      "_postinstall": "cp ./githooks/pre-push .git/hooks/ && chmod +x .git/hooks/pre-push",
-      "dev": "webpack --watch",
-      "examples": "node example/index.js",
-      "deploy": "webpack -p && npm run examples && npm run cover:only",
-      "debugDeploy": "webpack && npm run examples && npm run cover:only",
-      "test:only": "mocha --require babel-core/register --require chai/register-assert",
-      "test": "npm run test:only && npm run cypress:run",
-      "lint": "eslint lib test",
-      "format": "npm run lint -- --fix && prettier --write ./{lib,test}/**/*.{js,gql}",
-      "documentationjs": "./node_modules/documentation/bin/documentation.js build lib/Anilist.js -f html -o docs --shallow",
-      "cover:only": "istanbul cover _mocha -- --require babel-core/register --require chai/register-assert",
-      "cypress:run": "cypress run",
-      "cypress:open": "cypress open",
-      "cover": "istanbul cover _mocha --report lcovonly -- --require babel-core/register --require chai/register-assert -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
-  },
-  "babel": {
-      "presets": [
-          "env"
-      ],
-      "plugins": [
-          "transform-class-properties",
-          "transform-object-rest-spread", [
-              "babel-plugin-inline-import",
-              {
-                  "extensions": [
-                      ".json",
-                      ".gql"
-                  ]
-              }
-          ]
-      ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bote795/AniWrapper.git"
-  },
-  "keywords": [
-    "anilist",
-    "api",
-    "graphql",
-    "v2"
-  ],
-  "author": "Nicolas Botello",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bote795/AniWrapper/issues"
-  },
-  "homepage": "https://github.com/bote795/AniWrapper#readme",
-  "dependencies": {
-    "graphql-request": "1.8.2",
-    "jwt-decode": "2.2.0"
-  },
-  "resolutions": {
-    "cross-fetch": "2.2.2"
-  },
-  "devDependencies": {
-    "extend": ">=3.0.2",
-    "babel-core": "6.26.3",
-    "babel-loader": "7.1.5",
-    "babel-plugin-inline-import": "3.0.0",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-polyfill": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
-    "chai": "4.1.2",
-    "coveralls": "3.0.2",
-    "cypress": "3.1.3",
-    "documentation": "8.1.1",
-    "dotenv": "6.0.0",
-    "eslint": "4.19.1",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-config-prettier": "3.0.1",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-prettier": "2.6.2",
-    "istanbul": "1.1.0-alpha.1",
-    "lodash": ">=4.17.11",
-    "mocha": "5.2.0",
-    "mocha-lcov-reporter": "1.3.0",
-    "prettier": "1.15.3",
-    "ramda": "0.26.1",
-    "webpack": "4.19.1",
-    "webpack-cli": "3.1.0"
-  }
+    "name": "aniwrapper",
+    "version": "1.0.2",
+    "description": "api wrapper for anilist",
+    "module": "index",
+    "main": "index",
+    "engines": {
+        "node": ">=7.1.0",
+        "yarn": "^1.6.0"
+    },
+    "files": [
+        "node",
+        "index.js"
+    ],
+    "scripts": {
+        "prepack": "npm run build",
+        "buildDev": "rm -rf node && rm index.js && webpack && npm run examples",
+        "build": "rm -rf node && rm index.js && webpack -p && npm run examples",
+        "_postinstall": "cp ./githooks/pre-push .git/hooks/ && chmod +x .git/hooks/pre-push",
+        "dev": "webpack --watch",
+        "examples": "node example/index.js",
+        "deploy": "webpack -p && npm run examples && npm run cover:only",
+        "debugDeploy": "webpack && npm run examples && npm run cover:only",
+        "test:only": "mocha --require babel-core/register --require chai/register-assert",
+        "test": "npm run test:only && npm run cypress:run",
+        "lint": "eslint lib test",
+        "format": "npm run lint -- --fix && prettier --write ./{lib,test}/**/*.{js,gql}",
+        "documentationjs": "./node_modules/documentation/bin/documentation.js build lib/Anilist.js -f html -o docs --shallow",
+        "cover:only": "istanbul cover _mocha -- --require babel-core/register --require chai/register-assert",
+        "cypress:run": "cypress run",
+        "cypress:open": "cypress open",
+        "cover": "istanbul cover _mocha --report lcovonly -- --require babel-core/register --require chai/register-assert -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    },
+    "babel": {
+        "presets": [
+            "env"
+        ],
+        "plugins": [
+            "transform-class-properties",
+            "transform-object-rest-spread",
+            [
+                "babel-plugin-inline-import",
+                {
+                    "extensions": [
+                        ".json",
+                        ".gql"
+                    ]
+                }
+            ]
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bote795/AniWrapper.git"
+    },
+    "keywords": [
+        "anilist",
+        "api",
+        "graphql",
+        "v2"
+    ],
+    "author": "Nicolas Botello",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/bote795/AniWrapper/issues"
+    },
+    "homepage": "https://github.com/bote795/AniWrapper#readme",
+    "dependencies": {
+        "graphql-request": "1.8.2",
+        "jwt-decode": "2.2.0"
+    },
+    "resolutions": {
+        "cross-fetch": "2.2.2"
+    },
+    "devDependencies": {
+        "extend": ">=3.0.2",
+        "babel-core": "6.26.3",
+        "babel-loader": "7.1.5",
+        "babel-plugin-inline-import": "3.0.0",
+        "babel-plugin-transform-class-properties": "6.24.1",
+        "babel-plugin-transform-object-rest-spread": "6.26.0",
+        "babel-polyfill": "6.26.0",
+        "babel-preset-env": "1.7.0",
+        "babel-preset-react": "6.24.1",
+        "chai": "4.1.2",
+        "coveralls": "3.0.2",
+        "cypress": "3.1.3",
+        "documentation": "8.1.1",
+        "dotenv": "6.0.0",
+        "eslint": "4.19.1",
+        "eslint-config-airbnb-base": "13.1.0",
+        "eslint-config-prettier": "3.0.1",
+        "eslint-plugin-import": "2.14.0",
+        "eslint-plugin-prettier": "2.6.2",
+        "istanbul": "1.1.0-alpha.1",
+        "lodash": ">=4.17.11",
+        "mocha": "5.2.0",
+        "mocha-lcov-reporter": "1.3.0",
+        "prettier": "1.15.3",
+        "ramda": "0.26.1",
+        "webpack": "4.19.1",
+        "webpack-cli": "3.1.0"
+    }
 }
