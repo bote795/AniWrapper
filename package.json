@@ -69,9 +69,6 @@
     "graphql-request": "1.8.2",
     "jwt-decode": "2.2.0"
   },
-  "resolutions": {
-    "cross-fetch": "2.2.2"
-  },
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
