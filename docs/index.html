@@ -1,20 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset='utf-8' />
-  <title>aniwrapper 1.0.0 | Documentation</title>
+  <meta charset='utf-8'>
+  <title>aniwrapper 1.0.2 | Documentation</title>
+  <meta name='description' content='api wrapper for anilist'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
-  <link href='assets/style.css' type='text/css' rel='stylesheet' />
-  <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
 </head>
 <body class='documentation m0'>
     <div class='flex'>
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>aniwrapper</h3>
-          <div class='mb1'><code>1.0.0</code></div>
+          <div class='mb1'><code>1.0.2</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -114,14 +115,14 @@
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
-            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
           </div>
         </div>
       </div>
       <div id='split-right' class='relative overflow-auto height-viewport-100'>
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
@@ -136,8 +137,7 @@
 
   <p>Class Used to Interact with API</p>
 
-
-  <div class='pre p1 fill-light mt0'>new Anilist(accessToken: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</div>
+    <div class='pre p1 fill-light mt0'>new Anilist(accessToken: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</div>
   
   
 
@@ -192,8 +192,7 @@
 
   <p>get the anime currently watching list for signed in user</p>
 
-
-  <div class='pre p1 fill-light mt0'>getUserList(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+    <div class='pre p1 fill-light mt0'>getUserList(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -213,9 +212,7 @@
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
         MediaListCollection.lists
-[
-0
-]
+[0]
 .entries 
 <a href="#entries">entries</a>
 
@@ -241,6 +238,8 @@ anilist.getUserList()
   
 
   
+
+  
 </section>
 
       </div>
@@ -250,7 +249,7 @@ anilist.getUserList()
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>getUserListForUser(vars)</span>
+            <span class='code strong strong truncate'>getUserListForUser(variables, vars)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -260,8 +259,7 @@ anilist.getUserList()
 
   <p>Retriees the list specified by the parameters</p>
 
-
-  <div class='pre p1 fill-light mt0'>getUserListForUser(vars: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+    <div class='pre p1 fill-light mt0'>getUserListForUser(variables: any, vars: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -275,6 +273,14 @@ anilist.getUserList()
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>variables</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -342,9 +348,7 @@ id: Int,
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
         MediaListCollection.lists
-[
-0
-]
+[0]
 .entries 
 <a href="#entries">entries</a>
 
@@ -360,7 +364,7 @@ id: Int,
       
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> vars = {
 <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
-<span class="hljs-attr">listType</span>: <span class="hljs-string">'Anime'</span>,
+<span class="hljs-attr">listType</span>: <span class="hljs-string">'ANIME'</span>,
 <span class="hljs-attr">status</span>: <span class="hljs-string">'CURRENT'</span>
 };
 <span class="hljs-keyword">const</span> token = <span class="hljs-string">'&lt;Your_TOKEN&gt;'</span>;
@@ -368,6 +372,8 @@ id: Int,
 anilist.getUserListForUser(vars)
 .then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(result));</pre>
     
+  
+
   
 
   
@@ -394,8 +400,7 @@ anilist.getUserListForUser(vars)
 
   <p>search for an anime</p>
 
-
-  <div class='pre p1 fill-light mt0'>searchAnime(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+    <div class='pre p1 fill-light mt0'>searchAnime(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -454,6 +459,8 @@ anilist.searchAnime(name)
   
 
   
+
+  
 </section>
 
       </div>
@@ -463,7 +470,7 @@ anilist.searchAnime(name)
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>updateAnime(vars)</span>
+            <span class='code strong strong truncate'>updateAnime(variables, vars)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -473,8 +480,7 @@ anilist.searchAnime(name)
 
   <p>update anime for the current logged in user</p>
 
-
-  <div class='pre p1 fill-light mt0'>updateAnime(vars: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+    <div class='pre p1 fill-light mt0'>updateAnime(variables: any, vars: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -488,6 +494,14 @@ anilist.searchAnime(name)
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>variables</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -601,6 +615,8 @@ anilist.updateAnime(vars)
   
 
   
+
+  
 </section>
 
       </div>
@@ -610,7 +626,7 @@ anilist.updateAnime(vars)
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>addAnime(vars)</span>
+            <span class='code strong strong truncate'>addAnime(variables, vars)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -620,8 +636,7 @@ anilist.updateAnime(vars)
 
   <p>add anime to current logged in user</p>
 
-
-  <div class='pre p1 fill-light mt0'>addAnime(vars: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+    <div class='pre p1 fill-light mt0'>addAnime(variables: any, vars: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -635,6 +650,14 @@ anilist.updateAnime(vars)
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>variables</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -738,6 +761,8 @@ anilist.addAnime(vars)
   
 
   
+
+  
 </section>
 
       </div>
@@ -757,8 +782,7 @@ anilist.addAnime(vars)
 
   <p>remove anime from the user list</p>
 
-
-  <div class='pre p1 fill-light mt0'>removeAnime(id: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+    <div class='pre p1 fill-light mt0'>removeAnime(id: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -816,6 +840,8 @@ anilist.removeAnime(id)
   
 
   
+
+  
 </section>
 
       </div>
@@ -826,12 +852,14 @@ anilist.removeAnime(id)
   
 
   
+
+  
 </section>
 
           
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
@@ -846,8 +874,7 @@ anilist.removeAnime(id)
 
   <p>The media object</p>
 
-
-  <div class='pre p1 fill-light mt0'>Media</div>
+    <div class='pre p1 fill-light mt0'>Media</div>
   
     <p>
       Type:
@@ -937,12 +964,14 @@ anilist.removeAnime(id)
   
 
   
+
+  
 </section>
 
           
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
@@ -957,8 +986,7 @@ anilist.removeAnime(id)
 
   <p>The user List media Object</p>
 
-
-  <div class='pre p1 fill-light mt0'>entries</div>
+    <div class='pre p1 fill-light mt0'>entries</div>
   
     <p>
       Type:
@@ -1022,12 +1050,14 @@ anilist.removeAnime(id)
   
 
   
+
+  
 </section>
 
           
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
@@ -1042,8 +1072,7 @@ anilist.removeAnime(id)
 
   <p>The user List media Object created/updated</p>
 
-
-  <div class='pre p1 fill-light mt0'>updateEntry</div>
+    <div class='pre p1 fill-light mt0'>updateEntry</div>
   
     <p>
       Type:
@@ -1094,6 +1123,8 @@ anilist.removeAnime(id)
         </div>
       
     </div>
+  
+
   
 
   
